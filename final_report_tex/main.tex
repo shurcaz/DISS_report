@@ -1,0 +1,82 @@
+\documentclass[12pt,journal]{IEEEtran}
+\usepackage[margin=2cm]{geometry}
+\linespread{1.5}
+\usepackage{amsmath,amsfonts}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{array}
+\usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+\usepackage{textcomp}
+\usepackage{stfloats}
+\usepackage{url}
+\usepackage{verbatim}
+\usepackage{listings}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{wrapfig}
+\usepackage{minted}
+\usemintedstyle{borland}
+\usepackage[backend=bibtex, style=ieee]{biblatex}
+\hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
+\addbibresource{references.bib}
+\usepackage[strings]{underscore} % prevents bibtex missing $ error
+\usepackage{datetime}
+
+
+\newdateformat{monthyeardate}{%
+  \monthname[\THEMONTH], \THEYEAR}
+  
+\title{Autonomous Re-Configuration of Modular Spacecraft with Manipulator Arm}
+\author{}
+\date{\vspace{-4em}}
+
+\graphicspath{{./images/}}
+
+\begin{document}
+\onecolumn
+% Title Page
+\begin{center}
+	
+	\includegraphics[width=0.6\textwidth]{uni_logo.png}\\
+	\large
+	SCHOOL OF PHYSICS,\\ENGINEERING AND TECHNOLOGY
+	
+	\let\newpage\relax
+	\maketitle
+	
+	\vspace{2cm}
+	
+	\setlength{\tabcolsep}{25pt}
+	\begin{tabular}{ l l }
+		\textbf{Author:}  & Connall Shurey \\
+								 \\
+		\textbf{Supervisors:} & Mark Post,\\
+		 			 & Cumanan Kanapathippillai
+	\end{tabular}
+	
+	\vspace{2cm}
+	
+	MEng in Electronic and Computer Engineering\\
+	4th Year Project Final Report \\
+	\hfill\newline
+	\monthyeardate\today
+	
+	\pagebreak
+\end{center}
+
+
+\input{sections/abstract}
+\input{sections/acknowledgements}
+
+%\setcounter{tocdepth}{1}
+\tableofcontents
+
+\twocolumn
+\onecolumn
+
+\input{sections/introduction}
+
+\section{References}
+\printbibliography[heading=none]
+
+\end{document}
