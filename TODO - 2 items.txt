@@ -1,0 +1,2 @@
+- Stage 3.0 Draft
+- Rewrite automated reconfiguration section of report to section and display the information in a simpler way
