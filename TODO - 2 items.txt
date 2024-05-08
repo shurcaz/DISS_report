@@ -1,2 +1,4 @@
 - Stage 3.0 Draft
 - Rewrite automated reconfiguration section of report to section and display the information in a simpler way
+- Implement and detail motion planner (or at least talk about it and why it isn't implemented)
+- Write about possible feedback strategies in design feedback section
