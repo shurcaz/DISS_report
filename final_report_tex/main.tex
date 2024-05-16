@@ -14,13 +14,15 @@
 \usepackage{graphicx}
 \usepackage{enumitem}
 \usepackage{wrapfig}
+\usepackage{datetime}
+\usepackage{pdfpages}
 \usepackage{minted}
 \usemintedstyle{borland}
+\usepackage{hyperref}
 \usepackage[backend=bibtex, style=ieee]{biblatex}
 \hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
 \addbibresource{references.bib}
 \usepackage[strings]{underscore} % prevents bibtex missing $ error
-\usepackage{datetime}
 
 
 \newdateformat{monthyeardate}{%
@@ -66,17 +68,30 @@
 
 
 \input{sections/abstract}
+\newpage
+
 \input{sections/acknowledgements}
+\newpage
 
 %\setcounter{tocdepth}{1}
 \tableofcontents
+\newpage
 
-\twocolumn
-\onecolumn
+\input{sections/ethics}
 
 \input{sections/introduction}
 
+\input{sections/literatureReview}
+
+\input{sections/design}
+
+\newpage
 \section{References}
 \printbibliography[heading=none]
+
+\newpage
+\includepdf[pages=1,scale=0.8,pagecommand={\section{Appendix D - Initial Report}\label{Appendix D - Initial Report}}]{appendices/initReport.pdf}
+%\includepdf[pages=2-,scale=1,pagecommand={}]{appendices/initReport.pdf}
+%ENABLE LATER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \end{document}

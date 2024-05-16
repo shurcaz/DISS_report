@@ -1,1 +1,41 @@
 \section{Introduction}
+This section builds, and expands, on material previously included in the project Initial Report (see \nameref{Appendix D - Initial Report})
+\subsection{Background and Context}
+In recent years, there has been rapid development in space systems driven by a global push for increased commercial accessibility. Current commercial systems are designed with a focus on minimizing mass and launch costs, resulting in highly customized configurations that often lack robust maintenance and repair capabilities. Consequently, the population of ageing satellites is expanding, and upon reaching the end of their operational life, they are either deliberately de-orbited using atmospheric deconstruction methods or left in orbit, contributing to the accumulation of space debris.
+\\\\
+At present, there is little available technology to overcome these conditions. The HORIZON 2020 EU-funded MOdular Spacecraft Assembly and Reconfiguration (MOSAR) project \cite{MOSAR} was therefore initiated to develop innovative technologies aimed at standardising satellites and components. Modularising and standardising space systems will benefit the European space industry by enabling mass production of standardised components, reducing assembly costs, shortening the time between customer orders and deployment in space, and facilitating direct in-orbit repair and component upgrades, thereby extending the lifetime of space systems.
+\\\\
+MOSAR’s primary objective is to create modular and reconfigurable satellites that can be assembled and adjusted in orbit. The project has developed a demonstrator for reconfiguring cubic modules using a mobile robotic manipulator to simulate module movement. Currently, the manipulator receives fixed instructions for module mobility from software simulations on Earth \cite{MOSARDesign}. This research aims to enhance the system by developing an algorithm to automate module reconfiguration, enabling self-repair and self-assembly. Once implemented, this technology could automate space system assembly and platform construction in space, overcoming current limitations in the space industry.
+\subsection{Project Objectives and Specification}
+This project intends to enable autonomous assembly and reconfiguration of modular space systems by implementing a reconfiguration planning program made up of simple algorithms. This program, given the initial state and final state of a modular system, will generate a list of commands to be sent to a mobile manipulator to autonomously rearrange modules on a spacecraft or space platform. The planning program must account for physical constraints imposed by the mobile manipulator present on the modular system; therefore, this project will strive to explore methods of incorporating physical constraints into the planning process. 
+\\\\
+To achieve the research goal, the primary objective is to implement a functional planning program capable of autonomous module reconfiguration, which will be demonstrated through software simulation. If time allows, an additional goal is to physically demonstrate the planning program by integrating it with the available manipulator arm in the lab to reconfigure real modules.
+\\\\
+To achieve the research objectives, the following sub-objectives have been identified:
+\begin{enumerate}[]
+	\item Develop a reconfiguration planning program that generates module movement instructions for a mobile manipulator based on initial and final state configurations.
+	
+	\item Enhance the reconfiguration planning program to integrate physical constraints imposed by the mobile manipulator.
+	
+	\item Implement a display function to create reconfiguration slideshows or videos, allowing users to visualise the modular systems reconfiguration process.
+	
+	\item Conduct systematic testing of the system with various inputs to analyse system performance during solution generation.
+	
+	\item Demonstrate the system by integrating it with the laboratories robot arm to physically reconfigure real modules.
+\end{enumerate}
+
+By pursuing these steps, the project aims to showcase the feasibility and effectiveness of the planning program for autonomous assembly and reconfiguration of modular space systems, potentially paving the way for practical applications in the space industry.
+
+\newpage
+\subsection{Report Structure}
+This document serves as a comprehensive report of the research and development carried out during the Autonomous Re-Configuration of Modular Spacecraft with Manipulator Arm project. The report encompasses the following key components:
+\begin{enumerate}[]
+	\item\textbf{Literature Review and Research:} A thorough examination of the current state-of-the-art in modular reconfiguration, including a review of relevant literature and existing technologies in the field.
+	\item\textbf{Detailed Design Development:} Creation of a detailed design plan outlining the implementation strategy for the reconfiguration planning program, specifying key components and methodologies
+	\item\textbf{Implementation Description and Specification:} Description and Specifications of the final implemented design, detailing the development and optimisation.
+	\item\textbf{Design Analysis and Results:} Analysis of the implemented design, records of performance metrics, solution generation times, and failure rates obtained through testing and simulation.
+	\item\textbf{Discussion of Results:} Interpretation and discussion of the analysis results, evaluating their significance and implications within the broader context of the area of study.
+	\item\textbf{Project Management Approach:} Examination of the project management methodology employed throughout the project lifecycle, documenting the evolution of the project plan and strategic adjustments made to achieve project objectives.
+	\item\textbf{Recommendations for Further Work:} Identification of potential areas for future research and development to build upon the findings and achievements detailed in this report, suggesting methods for expanding and refining the implemented system.
+	
+\end{enumerate}
