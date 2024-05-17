@@ -1,0 +1,16 @@
+\subsection{Hardware Specifications}
+\subsubsection{Processing Hardware}
+The current software implementation requires a simple processor but is constrained by its speed. The primary hardware limitation is the available RAM, with a recommended range of 2 to 4 GB for the planner, depending on the size of the input state configuration.
+\\\\
+During the project, system timing results were obtained using a general-purpose desktop computer with the following specifications:
+\\
+\begin{tabularx}{1\textwidth}{ p{0.22\textwidth} p{0.78\textwidth} }
+	\textbf{Operating System:} 	& Windows 10 Pro 64-bit (10.0, Build 19045)\\
+	\textbf{Processor:} 		& AMD Ryzen 7 3700X 8-Core (16 CPUs) clocked at approximately 3.6 GHz\\
+	\textbf{GPU:} 				& NVIDIA GeForce RTX 2070 Super with 8GB VRAM\\
+	\textbf{RAM:} 				& 3 x 8 GB DDR4 Memory clocked at 3200 MHz\\
+	\textbf{Memory:} 			& 1 TB M.2 SSD with read speeds of 7,300 MB/s and write speeds of 540 MB/s\\
+\end{tabularx}
+
+\subsubsection{Mobile Manipulator}
+The mobile manipulator available in the lab is the Automata EVA, further details can be seen in \nameref{evaSpecSheet}. The manipulator was not physically used during the project due to time constraints. Though, the arm specifications were used for simulation so the current state of the reconfiguration planner can be integrated with the arm in a future project.

@@ -13,22 +13,22 @@ To search the graph and find the path to the goal state configuration, two major
 Given the requirement for solution efficiency over planner speed, the Task Planner implements the BFS algorithm. The pseudo-code for the Task Planner algorithm is shown in Listing \ref{SearchPseudo}.
 
 \begin{lstlisting}[caption={Task Planner search algorithm pseudo-code},captionpos=b,label={SearchPseudo}]
-	FIND PATH (S_start, S_goal, max_branches)
+FIND PATH (S_start, S_goal, max_branches)
 	search_tree <- []
 	S_current <- S_start
 	WHILE S_current NOT S_goal DO
-	PriorityQ <- GenNewStates(S_current)
-	FOR max_branches DO
-	S_new <- PriorityQ.pop(0)
-	S_new.parent <- S_current
-	search_tree.add(S_new)
-	END	
-	S_current <- search_tree.pop(0)
+		PriorityQ <- GenNewStates(S_current)
+		FOR max_branches DO
+			S_new <- PriorityQ.pop(0)
+			S_new.parent <- S_current
+			search_tree.add(S_new)
+		END	
+		S_current <- search_tree.pop(0)
 	END
 	RETURN S_current.GetStatePath()
 \end{lstlisting}
 
-\subsubsection{Generating States}
+\subsubsection{Generating States}\label{genStates}
 To expand the graph, the task planner generates new states using the \textbf{'GenNewStates()'} function, referenced in the search algorithm pseudo-code (Listing \ref{SearchPseudo}). States are generated based on a set of rules that prioritize which modules to move, ensuring efficient state expansion. The priority rules for module movement are as follows:
 \begin{enumerate}[]
 	\item Modules not yet in their final position
@@ -39,7 +39,7 @@ These rules ensure that the task planner consistently generates new states while
 \\\\
 A priority queue that prioritizes modules based on their distance from modules not yet in their final position was considered. This would allow for efficient repositioning of deeply embedded modules. However, this added complexity was deemed unnecessary for the current program's scope and would increase computation time for a relatively rare scenario. For larger structures, implementing such a priority queue could be beneficial to improve computation efficiency.
 
-\subsubsection{Trimming States}
+\subsubsection{Trimming States}\label{statePriority}
 When handling inputs with large numbers of modules, the search tree expansion can quickly result in a vast number of states, consuming significant memory, and computation time. To expedite the search process, generated states are sorted into a priority queue, and only the highest priority states are added to the search graph. The remaining states are discarded, as illustrated in Figure \ref{treeTrimming}. The states are prioritized based on their proximity to the desired goal configuration, using the following heuristics:
 \begin{itemize}[]
 	\item Number of modules already in their final positions.

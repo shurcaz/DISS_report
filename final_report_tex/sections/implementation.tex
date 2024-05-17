@@ -1,0 +1,22 @@
+\section{System Implementation and Specifications}
+
+\input{sections/Implementation/hardware}
+
+\subsection{Software Specifications}
+\subsubsection{Software Architecture Overview}
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{softwareImplementation.png}
+	\caption{High-level System Implemented Design}
+	\label{systemImplementation}
+\end{figure}
+The modular structure of the final software implementation is illustrated in Figure \ref{systemImplementation}. The main file integrates the Logic Layer and Physical Layer, facilitating communication and applying feedback strategies between them. Once a solution is found, the Output Formatter is used to display the instructions to users (seen in \nameref{5modTest}) and to create animations of state reconfiguration transitions for visual analysis of the process.
+
+\input{sections/Implementation/softwareLogic}
+\input{sections/Implementation/softwarePhysical}
+
+\subsection{Feedback Strategies}
+Currently, the system employs a basic feedback strategy. Upon detecting a failure in the physical layer, the system returns the state transition responsible for the failure. Subsequently, the branch of the tree originating from the failing state transition is removed, eliminating states where the failing state was as an ancestor. The pruned search tree is then passed back to the logic layer to pursue an alternative semantic solution.
+
+\input{sections/Implementation/Challenges}
+

@@ -4,6 +4,7 @@
 \usepackage{amsmath,amsfonts}
 \usepackage{algorithmic}
 \usepackage{algorithm}
+\usepackage{tabularx}
 \usepackage{array}
 \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
 \usepackage{textcomp}
@@ -86,23 +87,23 @@
 \newpage
 
 \input{sections/ethics}
-
 \input{sections/introduction}
-
 \input{sections/literatureReview}
-
 \input{sections/design}
+\input{sections/implementation}
+\input{sections/testing}
+\input{sections/discussion}
 
 \newpage
 \section{References}
 \printbibliography[heading=none]
 
 % APPENDICES
-\input{appendices/inputOutput}
-\input{appendices/moduleTest}
-\input{appendices/test_results}
-\input{appendices/evaSpec}
-\input{appendices/evaURDF}
+\input{appendices/inputOutput}	% A
+\input{appendices/moduleTest}	% B
+\input{appendices/test_results} % C
+\input{appendices/evaSpec}		% D
+\input{appendices/evaURDF}		% E
 
 
 \newpage
