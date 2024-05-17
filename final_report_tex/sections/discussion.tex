@@ -1,0 +1,35 @@
+\section{Discussion}
+\subsection{Interpretation of results}
+The results indicate that while the system is almost guaranteed to find a solution if one exists, the efficiency and time required are highly dependent on the maximum number of branches in the logic layer's search tree. The optimal number of branches appears to be a function of the number of modules in the input state configuration, with larger configurations requiring more branches. This need arises due to the increased number of physical layer failures with higher module counts (as seen in fig \ref{failures}), necessitating more alternative paths to find a solution. Interestingly, the time spent in the physical layer does not increase according to a clear trend (fig \ref{physicalLayerTime}), suggesting that many failures occur at the inverse kinematics verifier stage, thus avoiding the more computationally expensive motion planner.
+\\\\
+As the logic layer requires exponentially more time to find a solution with an increasing number of branches, and the physical layer experiences more failures as more semantic solutions are generated, the best path forward to improve the system includes:
+\begin{itemize}[]
+	\item Optimising or enhancing the logic layer search algorithm to mitigate the exponential increase in search time.
+	\item Improving feedback strategies from physical layer failures to provide more detailed information to the logic layer, enabling smarter trimming of the search tree. For example, when a state is trimmed from the search tree, if an equivalent state exists as the result of a different path, the trimmed branch could be appended to that state. This would prevent the loss of potentially valid paths along the trimmed branch.
+\end{itemize}
+
+\subsection{Comparison to existing work}
+Solutions of the implemented system are fair more efficient than solutions proposed by the melt-and-grow algorithm \cite{8581406} used previously, however the melt-and-grow algorithm can handle far more modules. 
+\\\\
+The system used as a primary source of inspiration \cite{9438257} tested for a different set of performance metrics, so is hard to compare against. However, when conducting the 5-module test also conducted in the study we received much faster results as seen in fig \ref{resultCompare}. The timing comparison is slightly unfair as our system does not implement an advanced motion planner or generate instructions for mobile manipulator walking. Therefore, only the logic layer timing can be fairly compared which is highly in favour of our system, likely due to more time put towards optimisation and different overall project goals.
+
+\begin{figure}[H]
+	\begin{tabularx}{\textwidth} {| X | p{0.3\textwidth} | p{0.3\textwidth} |}
+		\hline
+		\textbf{5 Module Test} & \textbf{Our results} & \textbf{Previous System Results}\\
+		\hline
+		Logic Layer Time 	 & 0.008 s	& 0.21 s\\
+		\hline
+		Physical Layer Time   & 0.147 s & 46.89 ($\pm$20.6) s\\
+		\hline
+		Total Time 	 & 0.154 s & 47.10 ($\pm$20.6) s \\
+		\hline
+	\end{tabularx}
+	\caption{Our results compared to the system developed in this paper \cite{9438257} for a 5-Module test (Further test information in \nameref{5modTest})}
+	\label{resultCompare}
+\end{figure}
+
+\subsection{Implications}
+At present, the developed reconfiguration plan serves as a proof of concept and gives a modular base for further development to improve on. As the system is comprised of multiple parts working separately, its possible for multiple later projects to develop the system in parallel, focusing on developing separate portions of the overall system increasing development time of a more capable system.
+\\\\
+It was suggested during project demonstration to industry professionals that at its current state, the system does not consider enough factors to reliably operate unsupervised. Though could be implemented in the manufacturing or construction industry shortly under supervision to for example, stack and track containers in a warehouse. The production of a less capable system for industry could be key to raising the funds required for further development and eventual adoption in the space industry.

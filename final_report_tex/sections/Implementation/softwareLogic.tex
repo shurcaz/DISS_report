@@ -4,7 +4,7 @@ The Logic Layer consists of a Task Planner and its related methods, and classes 
 \subsubsection{Logic Layer - Task Planner}
 The Task Planner begins by verifying the start and goal states have the same number and composition of modules; And generates states utilising the State Priority Queue and State Classes. It returns an array of states representing the transitions required to reconfigure the start state into the goal state.
 \\\\
-The Planner consists of two main methods, \textbf{“FindPath()“} and \textbf{“GenNewStates()”}. The \textbf{“FindPath()“} method implements the search algorithm shown in listing \ref{SearchPseudo}), while \textbf{“GenNewStates()”} expands the tree based on the heuristics specified in the design section \ref{genStates},a as can be seen in listing \ref{generateStatesPseudo}. After generating states, “FindPath()” records their parent states, enabling the program to trace the transition path from the starting state to the goal state.
+The Planner consists of two main methods, \textbf{“FindPath()“} and \textbf{“GenNewStates()”}. The \textbf{“FindPath()“} method implements the search algorithm shown in listing \ref{SearchPseudo}), while \textbf{“GenNewStates()”} expands the tree based on the heuristics specified in the design section \ref{genStates}, as can be seen in listing \ref{generateStatesPseudo}. After generating states, “FindPath()” records their parent states, enabling the program to trace the transition path from the starting state to the goal state.
 
 \begin{lstlisting}[caption={State Generation Pseudo-code},captionpos=b,label={generateStatesPseudo}]
 GenNewStates(state, goalState)
