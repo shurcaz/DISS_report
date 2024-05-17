@@ -1,0 +1,13 @@
+FIND PATH (S_start, S_goal, max_branches)
+	search_tree <- []
+	S_current <- S_start
+	WHILE S_current NOT S_goal DO
+		PriorityQ <- GenNewStates(S_current)
+		FOR max_branches DO
+			S_new <- PriorityQ.pop(0)
+			S_new.parent <- S_current
+			search_tree.add(S_new)
+		END	
+		S_current <- search_tree.pop(0)
+	END
+	RETURN S_current.GetStatePath()

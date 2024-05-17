@@ -1,4 +1,4 @@
-\documentclass[12pt,journal]{IEEEtran}
+\documentclass[12pt,journal]{article}
 \usepackage[margin=2cm]{geometry}
 \linespread{1.5}
 \usepackage{amsmath,amsfonts}
@@ -16,6 +16,9 @@
 \usepackage{wrapfig}
 \usepackage{datetime}
 \usepackage{pdfpages}
+\usepackage{subfig}
+\usepackage{caption}
+\usepackage[list=true]{subcaption}
 \usepackage{minted}
 \usemintedstyle{borland}
 \usepackage{hyperref}
@@ -23,7 +26,6 @@
 \hyphenation{op-tical net-works semi-conduc-tor IEEE-Xplore}
 \addbibresource{references.bib}
 \usepackage[strings]{underscore} % prevents bibtex missing $ error
-
 
 \newdateformat{monthyeardate}{%
   \monthname[\THEMONTH], \THEYEAR}
@@ -33,6 +35,12 @@
 \date{\vspace{-4em}}
 
 \graphicspath{{./images/}}
+
+\lstset{
+	basicstyle = \fontfamily{Courier},
+	keywordstyle=\bfseries,
+	morekeywords={*,IF,WHILE,FOR,DO,END, RETURN}
+}
 
 \begin{document}
 \onecolumn
@@ -46,7 +54,7 @@
 	\let\newpage\relax
 	\maketitle
 	
-	\vspace{2cm}
+	\vspace{1.5cm}
 	
 	\setlength{\tabcolsep}{25pt}
 	\begin{tabular}{ l l }
@@ -89,8 +97,16 @@
 \section{References}
 \printbibliography[heading=none]
 
+% APPENDICES
+\input{appendices/inputOutput}
+\input{appendices/moduleTest}
+\input{appendices/test_results}
+\input{appendices/evaSpec}
+\input{appendices/evaURDF}
+
+
 \newpage
-\includepdf[pages=1,scale=0.8,pagecommand={\section{Appendix D - Initial Report}\label{Appendix D - Initial Report}}]{appendices/initReport.pdf}
+\includepdf[pages=1,scale=0.8,pagecommand={\section{Appendix G - Initial Report}\label{Initial Report}}]{appendices/initReport.pdf}
 %\includepdf[pages=2-,scale=1,pagecommand={}]{appendices/initReport.pdf}
 %ENABLE LATER %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 

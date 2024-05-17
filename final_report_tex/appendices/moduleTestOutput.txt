@@ -1,0 +1,6 @@
+----- Solution Found -----
+COUNT: Branches           - None
+COUNT: moves              - 2
+COUNT: Failures           - 0
+TIME: Logic Layer time    - 0.008 s
+TIME: Physical Layer time - 0.147 s

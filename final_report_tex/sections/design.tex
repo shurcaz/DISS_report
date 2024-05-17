@@ -1,12 +1,21 @@
 \section{System Design and Development}
-\begin{figure*}[!t]
+\subsection{Overview}
+\begin{figure*}[h]
 	\centering
 	\includegraphics[width=\textwidth]{systemDesign.png}
 	\caption{High-level System Design}
 	\label{systemDesign}
 \end{figure*}
 
-test
+The Reconfiguration Task and Motion Planner (TAMP) program is designed using Python, leveraging existing Python implementations\cite{EVASDK} for controlling the robotic arm \cite{evaSpec} available in the lab. The program inputs an initial and final state and outputs a list of instructions to reconfigure the initial state into the final state using a mobile manipulator.
+\\\\
+The TAMP system comprises three main components: the logic layer, the physical layer, and the feedback controller. Each component has a distinct role, allowing the discrete and continuous aspects of the solution search to be managed separately while ensuring integration and communication between layers through the feedback controller.
+\begin{itemize}[]
+	\item\textbf{Logic Layer:} Responsible for discrete task planning.
+	\item\textbf{Physical Layer:} Manages continuous motion planning.
+	\item\textbf{Feedback Controller:} Integrates the logic and physical layers, facilitating communication and iterative solution searching through feedback strategies.
+\end{itemize}
+The feedback strategies implemented by the feedback controller create a control loop behaviour, iteratively refining the solution. Once a feasible solution is found, it is formatted into the required instruction set by the output formatter.
 
 \input{sections/Design/logic}
 \input{sections/Design/physical}
